@@ -27,6 +27,7 @@
 """
 "lol"
 "xd"
+"asd"
 import config as cf
 import sys
 import csv
