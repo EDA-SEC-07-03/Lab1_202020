@@ -31,6 +31,7 @@ import sys
 import csv
 from time import process_time 
 #xddd
+#megustaelaguacate
 def loadCSVFile (file, lst, sep=";"):
     """
     Carga un archivo csv a una lista
