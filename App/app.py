@@ -105,11 +105,26 @@ def countElementsFilteredByColumn(criteria, column, lst):
         print("Tiempo de ejecución ",t1_stop-t1_start," segundos")
     return counter
 
-def countElementsByCriteria(criteria, column, lst):
+def countElementsByCriteria(director_name, lst):
     """
     Retorna la cantidad de elementos que cumplen con un criterio para una columna dada
     """
-    return 0
+    if len(lst) != 0:
+        promedio_p = 0
+        director_p = 0
+        cont = 0
+        for i in range(0,len(lst[0])-1):
+            if lst[0][i] == "vote_average":
+                promedio_p = i
+            if lst[0][i] == "director_name":
+                director_p = i
+        del lst[0]
+        for a in lst:
+            if int(a[promedio_p]) >= 6 and a[director_p] == director_name:
+                cont += 1
+    else:
+        cont = 0
+    return cont
 
 
 def main():
