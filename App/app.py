@@ -25,12 +25,11 @@
 """
   Este módulo es una aplicación básica con un menú de opciones para cargar datos, contar elementos, y hacer búsquedas sobre una lista.
 """
-
+"alv"
 import config as cf
 import sys
 import csv
 from time import process_time 
-#xDDD
 def loadCSVFile (file, lst, sep=";"):
     """
     Carga un archivo csv a una lista
