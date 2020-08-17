@@ -113,7 +113,7 @@ def countElementsByCriteria(criteria,lst)->tuple:
     for i in lst:
         if(i["director_name"] == criteria):
             id.append(int(i["id"]))
-    loadCSVFile("Data/SmallMoviesDetailsCleaned.csv",details)
+    loadCSVFile("Data/AllMoviesDetailsCleaned.csv",details)
     for i in details:
         for a in id:
             if(int(i["id"]) == a):
@@ -140,7 +140,7 @@ def main():
         inputs =input('Seleccione una opción para continuar\n') #leer opción ingresada
         if len(inputs)>0:
             if int(inputs[0])==1: #opcion 1
-                loadCSVFile("Data/MoviesCastingRaw-small.csv", lista) #llamar funcion cargar datos
+                loadCSVFile("Data/AllMoviesCastingRaw.csv", lista) #llamar funcion cargar datos
                 print("Datos cargados, "+str(len(lista))+" elementos cargados")
             elif int(inputs[0])==2: #opcion 2
                 if len(lista)==0: #obtener la longitud de la lista
@@ -154,6 +154,7 @@ def main():
             elif int(inputs[0])==4: #opcion 4
                 criteria=input("Digite el director que desea buscar.\n")
                 xd=countElementsByCriteria(criteria,lista)
+                print(lista)
                 print("El director "+criteria+" tiene "+str(xd[0])+" peliculas buenas"+" con un promedio de "+str(xd[1]))
             elif int(inputs[0])==0: #opcion 0, salir
                 sys.exit(0)
