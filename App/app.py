@@ -98,13 +98,12 @@ def countElementsFilteredByColumn(criteria, column, lst):
         t1_stop = process_time() #tiempo final
         print("Tiempo de ejecución ",t1_stop-t1_start," segundos")
     return counter
-
+#Criteria=Nombre del director R1
 def countElementsByCriteria(criteria, column, lst):
     """
     Retorna la cantidad de elementos que cumplen con un criterio para una columna dada
     """
     return 0
-
 
 def main():
     """
@@ -129,7 +128,8 @@ def main():
                 else: print("La lista tiene "+str(len(lista))+" elementos")
             elif int(inputs[0])==3: #opcion 3
                 criteria =input('Ingrese el criterio de búsqueda\n')
-                counter=countElementsFilteredByColumn(criteria, "nombre", lista) #filtrar una columna por criterio  
+                Columna=input("Digite la columna que desea contar")
+                counter=countElementsFilteredByColumn(criteria,Columna, lista) #filtrar una columna por criterio  
                 print("Coinciden ",counter," elementos con el crtierio: ", criteria  )
             elif int(inputs[0])==4: #opcion 4
                 criteria =input('Ingrese el criterio de búsqueda\n')
