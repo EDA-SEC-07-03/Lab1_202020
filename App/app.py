@@ -113,7 +113,7 @@ def countElementsByCriteria(criteria,lst)->tuple:
     loadCSVFile("Data/AllMoviesDetailsCleaned.csv",details)
     for i in details:
         for a in id:
-            if(i["\ufeffid"] == a):
+            if(int(i["\ufeffid"]) == a):
                 if(float(i["vote_average"]) >= 6):
                     contador_buenas+=1
                     promedio+=float(i["vote_average"])
