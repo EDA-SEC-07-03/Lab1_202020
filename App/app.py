@@ -113,7 +113,7 @@ def countElementsByCriteria(criteria,lst)->tuple:
     loadCSVFile("Data/AllMoviesDetailsCleaned.csv",details)
     for i in details:
         for a in id:
-            if(int(i["id"]) == a):
+            if(i["\ufeffid"] == a):
                 if(float(i["vote_average"]) >= 6):
                     contador_buenas+=1
                     promedio+=float(i["vote_average"])
@@ -151,7 +151,6 @@ def main():
             elif int(inputs[0])==4: #opcion 4
                 criteria=input("Digite el director que desea buscar.\n")
                 xd=countElementsByCriteria(criteria,lista)
-                print(lista)
                 print("El director "+criteria+" tiene "+str(xd[0])+" peliculas buenas"+" con un promedio de "+str(xd[1]))
             elif int(inputs[0])==0: #opcion 0, salir
                 sys.exit(0)
