@@ -33,8 +33,6 @@ import config as cf
 import sys
 import csv
 from time import process_time 
-#xddd
-#megustaelaguacate
 def loadCSVFile (file, lst, sep=";"):
     """
     Carga un archivo csv a una lista
@@ -141,7 +139,8 @@ def main():
         inputs =input('Seleccione una opción para continuar\n') #leer opción ingresada
         if len(inputs)>0:
             if int(inputs[0])==1: #opcion 1
-                loadCSVFile("Data/test.csv", lista) #llamar funcion cargar datos
+                elija=input("Digite el nombre del arhivo que desea ejecutar.\n")
+                loadCSVFile("Data/"+elija+".csv", lista) #llamar funcion cargar datos
                 print("Datos cargados, "+str(len(lista))+" elementos cargados")
             elif int(inputs[0])==2: #opcion 2
                 if len(lista)==0: #obtener la longitud de la lista
@@ -153,7 +152,7 @@ def main():
                 print("Coinciden ",counter," elementos con el crtierio: ", criteria  )
             elif int(inputs[0])==4: #opcion 4
                 criteria =input('Ingrese el criterio de búsqueda\n')
-                counter=countElementsByCriteria(criteria,0,lista)
+                counter=countElementsByCriteria(criteria,lista)
                 print("Coinciden ",counter," elementos con el crtierio: '", criteria ,"' (en construcción ...)")
             elif int(inputs[0])==0: #opcion 0, salir
                 sys.exit(0)
