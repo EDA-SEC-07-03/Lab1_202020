@@ -150,6 +150,8 @@ def main():
                 print("Coinciden ",counter," elementos con el crtierio: ", criteria  )
             elif int(inputs[0])==4: #opcion 4
                 criteria=input("Digite el director que desea buscar.\n")
+                xd=countElementsByCriteria(criteria,lista)
+                print("El director "+criteria+" tiene "+str(xd[0])+" peliculas buenas"+" con un promedio de "+str(xd[1]))
             elif int(inputs[0])==0: #opcion 0, salir
                 sys.exit(0)
 
